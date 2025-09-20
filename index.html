@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EKSAU1</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <title>Nishant Dalal - Creative Developer</title>
     <style>
         * {
             margin: 0;
@@ -13,2074 +12,682 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: white;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            cursor: none;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            padding-bottom: 120px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stats-bar {
-            display: flex;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .stat-number {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #feca57;
-        }
-
-        .search-section {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            color: white;
-            font-size: 16px;
-            outline: none;
-        }
-
-        .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .controls-section {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: rgba(255, 107, 107, 0.3);
-            border-color: #ff6b6b;
-        }
-
-        .playlist {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-height: 500px;
-            overflow-y: auto;
-        }
-
-        .playlist h3 {
-            margin-bottom: 20px;
-            color: #feca57;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .song-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            margin-bottom: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-        }
-
-        .song-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateX(5px);
-        }
-
-        .song-item.active {
-            background: rgba(255, 107, 107, 0.3);
-            border-left-color: #ff6b6b;
-        }
-
-        .song-item.playing {
-            background: rgba(255, 107, 107, 0.4);
-            border-left-color: #ff6b6b;
-        }
-
-        .song-info {
-            flex-grow: 1;
-        }
-
-        .song-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .song-artist {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9em;
-            margin-bottom: 3px;
-        }
-
-        .song-duration {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.8em;
-        }
-
-        .song-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .action-btn {
-            background: none;
-            border: none;
-            color: rgba(255, 255, 255, 0.7);
-            cursor: pointer;
-            padding: 5px;
-            border-radius: 3px;
-            transition: color 0.3s ease;
-        }
-
-        .action-btn:hover {
-            color: #feca57;
-        }
-
-        .player {
+        /* Custom Cursor */
+        .cursor {
             position: fixed;
-            bottom: 0;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #00f5ff, #ff0080);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s;
+        }
+
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.3s ease;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
             left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(128, 255, 0, 0.1) 0%, transparent 50%);
+            animation: bgMove 20s ease-in-out infinite;
+        }
+
+        @keyframes bgMove {
+            0%, 100% { transform: translateX(0) translateY(0) scale(1); }
+            33% { transform: translateX(-20px) translateY(-20px) scale(1.1); }
+            66% { transform: translateX(20px) translateY(20px) scale(0.9); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 2rem;
+            border-radius: 50px;
             backdrop-filter: blur(20px);
-            padding: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .player-content {
-            max-width: 800px;
-            margin: 0 auto;
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, #00f5ff, #ff0080);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
             display: flex;
             align-items: center;
-            gap: 20px;
+            justify-content: center;
+            text-align: center;
+            position: relative;
         }
 
-        .current-song {
-            flex-grow: 1;
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00f5ff, #ff0080, #80ff00);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 5s ease-in-out infinite;
         }
 
-        .current-title {
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-content .subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .hero-content .description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .tech-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #00f5ff, #ff0080);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
-            margin-bottom: 5px;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
         }
 
-        .current-artist {
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 10px;
+        /* Skills Section */
+        .section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .progress-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .section h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(45deg, #ffffff, #00f5ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .progress-bar {
-            flex-grow: 1;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(0, 245, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Achievements Section */
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 128, 0.1));
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            position: relative;
             overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .achievement-card:hover::before {
+            animation: shine 0.5s ease-in-out;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #00f5ff, #ff0080);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-description {
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 0, 128, 0.05));
+            border-radius: 30px;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #00f5ff, #ff0080);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
             cursor: pointer;
         }
 
-        .progress-fill {
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-            width: 0%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .contact-btn:hover::before {
+            left: 100%;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.4);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00f5ff, #ff0080, #80ff00);
+            z-index: 1001;
             transition: width 0.1s ease;
         }
 
-        .time {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9em;
-            min-width: 45px;
-        }
-
-        .controls {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .control-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5em;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .control-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .play-btn {
-            font-size: 2em;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            padding: 15px;
-        }
-
-        .volume-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .volume-slider {
-            width: 100px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            outline: none;
-            border-radius: 2px;
-            cursor: pointer;
-        }
-
-        .volume-slider::-webkit-slider-thumb {
-            appearance: none;
-            width: 16px;
-            height: 16px;
-            background: #ff6b6b;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .scrollbar::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .scrollbar::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
-        }
-
-        .scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 3px;
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-                padding-bottom: 140px;
+            nav {
+                top: 1rem;
+                right: 1rem;
+                left: 1rem;
+                justify-content: center;
             }
-            
-            .player-content {
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .contact-buttons {
                 flex-direction: column;
-                gap: 15px;
+                align-items: center;
             }
-            
-            .controls {
-                order: -1;
-            }
-            
-            .volume-container {
+
+            .floating-element {
                 display: none;
             }
+        }
 
-            .stats-bar {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Additional glow effects */
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.3),
+                        0 0 40px rgba(0, 245, 255, 0.2),
+                        0 0 60px rgba(0, 245, 255, 0.1);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1><i class="bi bi-music-note-beamed"></i> ENTROROCKS</h1>
-            <p>Stream your favorite music album EKSAU1</p>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="bg-animation"></div>
+    <div class="scroll-indicator"></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#achievements">Work</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="floating-element">
+            <div class="tech-icon">JS</div>
+        </div>
+        <div class="floating-element">
+            <div class="tech-icon">⚛️</div>
+        </div>
+        <div class="floating-element">
+            <div class="tech-icon">🐍</div>
         </div>
 
-        <div class="stats-bar">
-            <div class="stat-item">
-                <i class="bi bi-music-note-list"></i>
-                <span><span class="stat-number" id="total-songs">101</span> Songs</span>
+        <div class="hero-content">
+            <h1>Nishant Dalal</h1>
+            <p class="subtitle">Creative Developer & Digital Innovator</p>
+            <p class="description">
+                Transforming ideas into digital reality through code, design, and innovation. 
+                Building the future one project at a time with cutting-edge technologies and creative solutions.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="fade-in">Technical Arsenal</h2>
+        <div class="skills-grid fade-in">
+            <div class="skill-card"><h3>HTML</h3></div>
+            <div class="skill-card"><h3>CSS</h3></div>
+            <div class="skill-card"><h3>JavaScript</h3></div>
+            <div class="skill-card"><h3>Python</h3></div>
+            <div class="skill-card"><h3>Java</h3></div>
+            <div class="skill-card"><h3>C/C++</h3></div>
+            <div class="skill-card"><h3>React</h3></div>
+            <div class="skill-card"><h3>Angular</h3></div>
+            <div class="skill-card"><h3>Bootstrap</h3></div>
+            <div class="skill-card"><h3>Tailwind</h3></div>
+            <div class="skill-card"><h3>SQL</h3></div>
+            <div class="skill-card"><h3>PHP</h3></div>
+            <div class="skill-card"><h3>Kotlin</h3></div>
+        </div>
+    </section>
+
+    <section id="achievements" class="section">
+        <h2 class="fade-in">Achievements & Impact</h2>
+        <div class="achievements fade-in">
+            <div class="achievement-card">
+                <div class="achievement-number">200+</div>
+                <div class="achievement-title">Templates Edited</div>
+                <div class="achievement-description">
+                    Mastered and customized hundreds of HTML, CSS, and JS templates, bringing unique designs to life.
+                </div>
             </div>
-            <div class="stat-item">
-                <i class="bi bi-person-fill"></i>
-                <span><span class="stat-number" id="total-artists">25</span> Artists</span>
+            
+            <div class="achievement-card">
+                <div class="achievement-number">50+</div>
+                <div class="achievement-title">Websites Created</div>
+                <div class="achievement-description">
+                    Built from scratch, each website showcases innovative design and flawless functionality.
+                </div>
             </div>
-            <div class="stat-item">
-                <i class="bi bi-collection"></i>
-                <span><span class="stat-number" id="total-albums">1</span> Albums</span>
+            
+            <div class="achievement-card">
+                <div class="achievement-number">2</div>
+                <div class="achievement-title">Mobile Apps</div>
+                <div class="achievement-description">
+                    Developed native mobile applications, with one successfully published on Indus App Store.
+                </div>
             </div>
-        </div>
-
-        <div class="search-section">
-            <input type="text" class="search-input" id="search-input" placeholder="Search songs, artists, or albums...">
-        </div>
-
-        <div class="controls-section">
-            <button class="filter-btn active" data-filter="all">All Songs</button>
-            <button class="filter-btn" data-filter="favorites">Favorites</button>
-            <button class="filter-btn" data-filter="recent">Recently Played</button>
-            <button class="filter-btn" id="shuffle-all">
-                <i class="bi bi-shuffle"></i> Shuffle All
-            </button>
-        </div>
-
-        <div class="playlist scrollbar">
-            <h3>
-                <i class="bi bi-music-note-list"></i> 
-                <span id="playlist-title">All Songs</span>
-                <span id="song-count">(101 songs)</span>
-            </h3>
-            <div id="song-list">
-                <div class="loading">
-                    <i class="bi bi-arrow-clockwise" style="font-size: 2em; animation: spin 1s linear infinite;"></i>
-                    <p>Loading your music library...</p>
+            
+            <div class="achievement-card">
+                <div class="achievement-number">2000+</div>
+                <div class="achievement-title">Designs Created</div>
+                <div class="achievement-description">
+                    Crafted stunning visual designs on Canva, showcasing creativity across multiple domains.
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-number">1</div>
+                <div class="achievement-title">Startup Founded</div>
+                <div class="achievement-description">
+                    Established a successful web development startup, providing comprehensive digital solutions.
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-number">3</div>
+                <div class="achievement-title">Books Published</div>
+                <div class="achievement-description">
+                    Authored technical and creative books, with plans for 10+ more publications in the pipeline.
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-number">150+</div>
+                <div class="achievement-title">Songs Written</div>
+                <div class="achievement-description">
+                    Creative expression through music, showcasing versatility beyond the technical realm.
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-number">∞</div>
+                <div class="achievement-title">Future Projects</div>
+                <div class="achievement-description">
+                    The journey continues with unlimited potential for innovation and creative breakthroughs.
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="player">
-        <div class="player-content">
-            <div class="current-song">
-                <div class="current-title" id="current-title">Select a song to play</div>
-                <div class="current-artist" id="current-artist">No artist</div>
-                <div class="progress-container">
-                    <span class="time" id="current-time">0:00</span>
-                    <div class="progress-bar" id="progress-bar">
-                        <div class="progress-fill" id="progress-fill"></div>
-                    </div>
-                    <span class="time" id="duration">0:00</span>
-                </div>
-            </div>
-
-            <div class="controls">
-                <button class="control-btn" id="shuffle-btn"><i class="bi bi-shuffle"></i></button>
-                <button class="control-btn" id="prev-btn"><i class="bi bi-skip-start-fill"></i></button>
-                <button class="control-btn play-btn" id="play-btn"><i class="bi bi-play-fill" id="play-icon"></i></button>
-                <button class="control-btn" id="next-btn"><i class="bi bi-skip-end-fill"></i></button>
-                <button class="control-btn" id="repeat-btn"><i class="bi bi-arrow-repeat"></i></button>
-            </div>
-
-            <div class="volume-container">
-                <i class="bi bi-volume-up-fill"></i>
-                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="50">
+    <section id="contact" class="section">
+        <div class="contact fade-in">
+            <h2>Let's Create Something Amazing</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.8;">
+                Ready to bring your vision to life? Let's collaborate and build the extraordinary.
+            </p>
+            <div class="contact-buttons">
+                <a href="mailto:nishantdalal9283@gmail.com" class="contact-btn">Personal Contact</a>
+                <a href="mailto:admin@entrogroup.in" class="contact-btn">Business Inquiries</a>
             </div>
         </div>
-
-        <audio id="audio-player" preload="metadata"></audio>
-    </div>
-
-    <style>
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-    </style>
+    </section>
 
     <script>
-        class MusicStreamingApp {
-            constructor() {
-                // Pre-loaded song library - Replace these URLs with your actual hosted audio files
-                this.musicLibrary = [
-                    {
-                        id: 1,
-                        title: "Aapki nazron ne samjha",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "5:10",
-                        url: "https://audio.jukehost.co.uk/1X8vuzpTVKKU62bsv7ExrVuXgkbyVg33", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 112131
-                    },
-                    {
-                        id: 2,
-                        title: "Aayega",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "4:43",
-                        url: "https://audio.jukehost.co.uk/SoYmrXPljmf1qaBSeyeYJxStmSO3zkAp", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: false,
-                        playCount: 132413
-                    },
-                    {
-                        id: 3,
-                        title: "Akela",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "3:11",
-                        url: "https://audio.jukehost.co.uk/CAL17RJKL1ofAm9tRnHKsfbccLu6uiSn", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22234
-                    },
-                    {
-                        id: 4,
-                        title: "Baahon Mein",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/4CJv2EROK7uhayGiMIUUqB7SK9qOfxoz", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 123423
-                    },
-                    {
-                        id: 5,
-                        title: "Ban ki chidiya",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/MbR46VUZtQc0xbq1PFxJwvsQCzYEuO3m", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 6,
-                        title: "bejuban sa ishq",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/AxNzS75NGG3R0LKL3nGofi5XBZYo8PUM", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 7,
-                        title: "Bekhayali",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/jqjJc275EPCqmvTMXMrfdelJ3g9PcI5u", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 8,
-                        title: "Bhor aayi gaya andhiyara",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/qCPU4oRRnWyfMScbF4wPj654OdpVxxbp", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 9,
-                        title: "Chaand phir Nikla",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/n0I7zituLadp7sdEQJCKYh2nTBDDziO7", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 10,
-                        title: "Closer to the light",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/JYTqrnEFM4tdlaRQ18otAnNtfsaIouug", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 11,
-                        title: "Coder Song",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/O80OcX045qQ9i0emH8b5RNMD0YgUWpoA", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 12,
-                        title: "Daaru ke andar",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/3SKqrKzP1uYUYypvn8iM3MD7dV86pffB", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 13,
-                        title: "Dil ke Jazbaat",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/fSLlI0ifpISIMMq67gtxkAWkCONc4dpu", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 14,
-                        title: "Don't hold back",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/MkLEmhutSwzoAz6xAT1wWHtaighg5GZ3", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 15,
-                        title: "Dream's Ignite",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/MIc3QSRn3PRjfEFgGsOHpIFYK7o9rwhi", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 16,
-                        title: "EKSAUEK",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/C6AMbBaHabftH52716koSweJWOlgA3mU", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 17,
-                        title: "Finally",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/exbvVzBDSmdIZuMCHWMuzmXGhP77SPbR", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 18,
-                        title: "Friends",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/qYdWl5O89qyvpabewt3vYLj5y6l3tS1o", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 19,
-                        title: "From the dark",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/EFh0ydbMcQcsyvqrlRG2PPfxTxNkIpdj", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 20,
-                        title: "Gallan Takdiyan",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/oTP9sjiZUhmjmmhYc00gv9nzpnoPimf6", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 21,
-                        title: "Game on",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/qDK8Aqn0j11Ys0EwPT5PY13js8VaNxkX", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 22,
-                        title: "Ghunghroo",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/RC81ouIZIpNENjUleccMGsqOdTDtt9UM", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 23,
-                        title: "Halke Halke",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/V7lv9Rqdwz1ZzbS9Xk6WEwo7lLpYDJs1", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 24,
-                        title: "Heer Ranjha",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/UKsDFRlxuF29R9D4e7FFTl9NG4bIuwuw", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 25,
-                        title: "Highway pe hum",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/HQ84e3rCnTslUKhCfhEEWZUqWaich69w", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 26,
-                        title: "Hold my hands",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/bhrxrLGQa22Y2iMph2tdlwayz0B0TrEG", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 27,
-                        title: "hum hain raahi pyaar ke",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/fq0eeN5Xf90JbUnrAaCjMNyinJjxebH7", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 28,
-                        title: "I still love you",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/VWgPpdYr3rhVtJ0zQPnON59104hDebDb", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 29,
-                        title: "Inhi logon ne",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/suxjalyJbiBThf3gPOxtK7EBnPDDT5tb", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 30,
-                        title: "Insane",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/kh0AGOhG1ffOpgG5Qeg8JwsKlLDje8oz", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 31,
-                        title: "Instrumental songs",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/jchDMFkUvSUqZXgCWqqhpKvsOBC1P2Lc", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 32,
-                        title: "Ishq",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/pjFTUqd7dd21S8ZZY7UZVVxehYYtOws3", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 33,
-                        title: "Jaan ban ja",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/6VirvHQVxu8QyfM7ksgjVx2dTK1qjV4b", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 34,
-                        title: "Jaane kya mene suni",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/NkfiXTrBUl9xwN6A0Xyg7OikxvqSdgJL", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 35,
-                        title: "Jazbaat",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/OpfgkVoZawPQaqNRebw8YKwfHPVFfqxh", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 36,
-                        title: "Jiya bekrar hai",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/wGSWeWGCybUQP54qj3gO7USAnx8oA6mg", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 37,
-                        title: "Kabhi hum kabhi tum",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/aVbIVWkpIQjVLAXtcocCyd3xuocgYqiE", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 38,
-                        title: "Kya chhupa rahe ho",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/PdiLW8wEzjjYlJ96hORK1iHrzwVU24HH", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 39,
-                        title: "Lamhe",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/zA2EnpTlpTGQAAcDgRV8siH32dvAOtMH", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 40,
-                        title: "Light it up",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/iBs0H9IrUOOsa3hb5xGBhCkGWuDmQpjf", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 41,
-                        title: "Lovely talks",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/4k2Q9KqfW0gbt3Xecppf3QzA0e7RUgEG", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 42,
-                        title: "Made of Gold",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/RzxuYc9CdlRgvSvIoccEKhp8RTN2Df87", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 43,
-                        title: "Mahiya ve mahiya",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/KLsnb1TRIn8fiiUmNDoxkAln2s1XUqdO", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 44,
-                        title: "Main hi to hoon",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/YXfQsT8q6s3bELhtsSHeu35otKRf1KuB", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 45,
-                        title: "main hoon tera",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/REjFZoykgbUlgKowzrsjgDkoUbQE7O4D", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 46,
-                        title: "Mausam",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/QcnLIV2fo9gai21Z8hV0W1bKfRBZ5DoW", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 47,
-                        title: "Mehbooba",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/ndTIEG3cfKtTARBhDrc6jZcvAcRmMhDV", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 48,
-                        title: "Mera karam",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/L5QW2KYfSVmLH0twnq1jEvizId1qccNh", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 49,
-                        title: "Mere humdum",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/CDdZbK2jMvFbFplGSnClBXFTZMGEIE2l", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 50,
-                        title: "Meri baaton pe na ja",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/Bd9CTAyVA8DeUjqFT27vP9vnWyzHG7TT", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 51,
-                        title: "Meri Jaan",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/MxOMxaY6aFBTD7M6f3lIFkOmXcU9VEoA", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 52,
-                        title: "Meri will",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/5Hou1wriKUDXTHdyqzuUo8LrAFy1ac1F", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 53,
-                        title: "Mic pe fire",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/lcdZrLvRz7pul97sDtMmEq2sXm3zTzrG", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 54,
-                        title: "my beats",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/zIpPj9HEqw204Hz3lU7hz64svOXF0aFG", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 55,
-                        title: "Na tum hame jaano",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/sjwtCtmalxQ2ZY72WqddC0O1oZJ2NHk0", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 56,
-                        title: "Naagin si Chaal",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/zuD08SQkrGRRLumbzpw3IMtrtsN6lZvB", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 57,
-                        title: "Neon Burnout",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/21Z7KfdyqnUBXqXvEEfc8GsFhXDF62it", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 58,
-                        title: "No sleep mode",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/uLMtNpCS1zHD1jOyQ1IxvdQ8tiaUAMX6", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 59,
-                        title: "Only you",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/OZZ5jCNzpw4tgHmPLowFrqKK7mlPA2S2", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 60,
-                        title: "party mood",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/w0DbpMAgweayHXrAlQ2sbA36kniMRZ3M", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 61,
-                        title: "party",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/1R8XCUsV4qn5NsUmAFbUSFnM4VCvMIFG", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 62,
-                        title: "Pehli si baat",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/83LnIK48IvVkFlH6n0a9HMYw8994DFUl", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 63,
-                        title: "People",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/Zvdx8R1x1r7suzLOMkUkrGSPpfohSoaQ", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 64,
-                        title: "Phir vahi shyam",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/BOMoWhESX0VCrWm1qjLig5wMCqLqHMCm", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 65,
-                        title: "phirse tujhko chaha hai",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/3cQElNmftV8VhFOD3qzAkxIrij3REbqm", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 66,
-                        title: "Raat",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/X75kQUgKKZQowF854EVrqBp9vT08HRrz", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 67,
-                        title: "Ride on beats",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/n3yqGaQzzmuccLGNrkRd9r3WCugcoAtX", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 68,
-                        title: "right beside you",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/UWd9mdzp2AoZPRG6RiAeMzVSiiR7EHEY", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 69,
-                        title: "Salto Suave",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/1hiDNCRX5lgUqRgw7dRb0IA8CX9LmGL9", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 70,
-                        title: "Sapna Lauta do",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/RRcWJdkP5BNIDk7WauEtodlxk8tmvLEY", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 71,
-                        title: "Shattered in your name",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/3ND9hCyBAgdM6hQbBK7u9fsdPVNo3UNt", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 72,
-                        title: "Shine with me",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/LZ45nDVaxris4upNFDABE1XDGXlwbiA4", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 73,
-                        title: "Starlight",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/LZ45nDVaxris4upNFDABE1XDGXlwbiA4", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 74,
-                        title: "Stay with me",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/2kfoIt9Hq75NCc1SCLzUgBe0z8e1gdiV", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 75,
-                        title: "Still bleeding you",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/gq5xVVQiMjytSCXSCyLp57jEFBdelMfh", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 76,
-                        title: "Strong Destiny",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/tyv87hTVBTDl1Mb2HMCzmVrxC1cpYnl4", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 77,
-                        title: "Surat",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/NgesuzfcmQPPWhSVLlD1NMUCzILf7qxF", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 78,
-                        title: "Swag",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/NKMcCF8sQZCzFvSJZPUmf83HCav8D30N", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 79,
-                        title: "System error",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/DVtSbpjcQvF28ln8w74JrwVzIAxVM8Jk", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 80,
-                        title: "Tera fitoor",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/TVh6G1kNBVpmuROoHcGc4D7Q8bffE3I5", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 81,
-                        title: "teri adah",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/Tu1ljxLLT4XP8EmrmjQuCbGqonKYDy3k", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 82,
-                        title: "teri nazar",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/N4pjHiODSqgqagr2L1qXx6EaIkZ2ND6r", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 83,
-                        title: "the last song",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/v5PQjjRZBenOKBfKvcFPGR2IRkyR9yJZ", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 84,
-                        title: "this is my life",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/QhR0BrvxiCD7iZhsryYKQvJrv6ryphjO", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 85,
-                        title: "thodi si zameen",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/I77Q9oI4O0RMnmUgRKUJ9NlNR2UUGRJ0", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 86,
-                        title: "tonight's the night",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/D8MIp9xmlXbu7h7BPgVNff9TV5nAjbup", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 87,
-                        title: "tu hi yaad aaye",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/KXQNH1BrL8Al1aQXAv7uj47HSitxbF7K", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 88,
-                        title: "tu hi",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/rNbhkLSlXBHt25YsHFQb71UOZaonma6F", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 89,
-                        title: "vajah",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/o03bPdgVQ5Uwjtyf1hHabDw62goi09Lm", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 90,
-                        title: "veeran",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/oqNNWqKOqJmzYCO1JAFxMtO9ppVkqwkM", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 91,
-                        title: "velvet skies",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/TV9DHkbSpHq0zTwTn8B0769RrSn1SorQ", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 92,
-                        title: "vo shyam kuchh ajeeb thi",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/R7MGBPGk7Ub5mkWsYyxUmspLxr4mXSfY", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 93,
-                        title: "we are gone",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/vkwrXUx4B246LAAYdMJ2nHZ0bmARMadG", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 94,
-                        title: "where the light once fell",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/O9Me49p5v4QGq87UiIMYRXusWfv5Ns2u", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 95,
-                        title: "without you",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/ObJIy6mVqhHZA2EtGvbwMI3PNIHPb5GC", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 96,
-                        title: "yaad aayegi",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/vgVsY16bBKM1eFU8N6WFXHc9KtB6uCJg", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 97,
-                        title: "ye dil",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/ldAelj95NWUOpfOsXr0khHHBw5GfH70x", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 98,
-                        title: "you let me fall",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 99,
-                        title: "you are very hot",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/swzBXZx61ex9VzXmuhqgevfby935ZEx2", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    {
-                        id: 100,
-                        title: "your voice",
-                        artist: "Nishant",
-                        album: "EKSAU1",
-                        duration: "0:00",
-                        url: "https://audio.jukehost.co.uk/Q2tVretEbN7od6e6qBy8b1gXKJVGQ1JV", // Replace with your audio URL
-                        genre: "Sad",
-                        year: 2025,
-                        isFavorite: true,
-                        playCount: 22
-                    },
-                    // Add more songs here (up to 100)
-                    // You can generate this list programmatically or import from a JSON file
-                ];
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 50);
+        });
 
-                // Generate more sample songs to reach 100
-                this.generateSampleSongs();
-                
-                this.currentIndex = 0;
-                this.isPlaying = false;
-                this.isShuffled = false;
-                this.repeatMode = 'off'; // 'off', 'one', 'all'
-                this.currentFilter = 'all';
-                this.searchQuery = '';
-                this.filteredSongs = [...this.musicLibrary];
-                
-                this.audio = document.getElementById('audio-player');
-                this.initializeElements();
-                this.setupEventListeners();
-                this.loadMusicLibrary();
-                this.audio.volume = 0.5;
-            }
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.scroll-indicator').style.width = scrolled + '%';
+        });
 
-            generateSampleSongs() {
-                const artists = ['Nishant'];
-                const songPrefixes = [];
-                const songSuffixes = [];
-                const albums = ['EKSAU1'];
-                const genres = ['Sad'];
+        // Fade in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-                // Generate songs 4-100
-                for (let i = 0; i <= 0; i++) {
-                    const artist = artists[Math.floor(Math.random() * artists.length)];
-                    const songPrefix = songPrefixes[Math.floor(Math.random() * songPrefixes.length)];
-                    const songSuffix = songSuffixes[Math.floor(Math.random() * songSuffixes.length)];
-                    const album = albums[Math.floor(Math.random() * albums.length)];
-                    const genre = genres[Math.floor(Math.random() * genres.length)];
-                    
-                    const minutes = Math.floor(Math.random() * 3) + 2;
-                    const seconds = Math.floor(Math.random() * 60);
-                    const duration = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
-                    this.musicLibrary.push({
-                        id: i,
-                        title: `${songPrefix} ${songSuffix}`,
-                        artist: artist,
-                        album: album,
-                        duration: duration,
-                        url: `https://example.com/audio/song-${i}.mp3`, // Replace with your audio URLs
-                        genre: genre,
-                        year: 2020 + Math.floor(Math.random() * 4),
-                        isFavorite: Math.random() > 0.8,
-                        playCount: Math.floor(Math.random() * 50)
-                    });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
-            }
+            });
+        }, observerOptions);
 
-            initializeElements() {
-                this.songList = document.getElementById('song-list');
-                this.searchInput = document.getElementById('search-input');
-                this.playBtn = document.getElementById('play-btn');
-                this.playIcon = document.getElementById('play-icon');
-                this.prevBtn = document.getElementById('prev-btn');
-                this.nextBtn = document.getElementById('next-btn');
-                this.shuffleBtn = document.getElementById('shuffle-btn');
-                this.repeatBtn = document.getElementById('repeat-btn');
-                this.shuffleAllBtn = document.getElementById('shuffle-all');
-                this.currentTitle = document.getElementById('current-title');
-                this.currentArtist = document.getElementById('current-artist');
-                this.currentTime = document.getElementById('current-time');
-                this.duration = document.getElementById('duration');
-                this.progressBar = document.getElementById('progress-bar');
-                this.progressFill = document.getElementById('progress-fill');
-                this.volumeSlider = document.getElementById('volume-slider');
-                this.playlistTitle = document.getElementById('playlist-title');
-                this.songCount = document.getElementById('song-count');
-                this.totalSongs = document.getElementById('total-songs');
-                this.totalArtists = document.getElementById('total-artists');
-                this.totalAlbums = document.getElementById('total-albums');
-            }
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
 
-            setupEventListeners() {
-                // Playback controls
-                this.playBtn.addEventListener('click', () => this.togglePlay());
-                this.prevBtn.addEventListener('click', () => this.previousSong());
-                this.nextBtn.addEventListener('click', () => this.nextSong());
-                this.shuffleBtn.addEventListener('click', () => this.toggleShuffle());
-                this.repeatBtn.addEventListener('click', () => this.toggleRepeat());
-                this.shuffleAllBtn.addEventListener('click', () => this.shuffleAll());
-                
-                // Audio events
-                this.audio.addEventListener('loadedmetadata', () => this.updateDuration());
-                this.audio.addEventListener('timeupdate', () => this.updateProgress());
-                this.audio.addEventListener('ended', () => this.handleSongEnd());
-                this.audio.addEventListener('play', () => this.updatePlayButton(true));
-                this.audio.addEventListener('pause', () => this.updatePlayButton(false));
-                
-                // UI events
-                this.progressBar.addEventListener('click', (e) => this.seekTo(e));
-                this.volumeSlider.addEventListener('input', (e) => this.setVolume(e));
-                this.searchInput.addEventListener('input', (e) => this.handleSearch(e));
-                
-                // Filter buttons
-                document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
-                    btn.addEventListener('click', (e) => this.setFilter(e.target.dataset.filter));
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
-            }
+            });
+        });
 
-            loadMusicLibrary() {
-                // Update stats
-                const uniqueArtists = [...new Set(this.musicLibrary.map(song => song.artist))];
-                const uniqueAlbums = [...new Set(this.musicLibrary.map(song => song.album))];
-                
-                this.totalSongs.textContent = this.musicLibrary.length;
-                this.totalArtists.textContent = uniqueArtists.length;
-                this.totalAlbums.textContent = uniqueAlbums.length;
+        // Interactive elements
+        document.querySelectorAll('.skill-card, .achievement-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.classList.add('glow');
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.classList.remove('glow');
+            });
+        });
 
-                this.applyFilters();
-            }
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.floating-element');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.2 * (index + 1);
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
 
-            applyFilters() {
-                let filtered = [...this.musicLibrary];
-
-                // Apply search filter
-                if (this.searchQuery) {
-                    const query = this.searchQuery.toLowerCase();
-                    filtered = filtered.filter(song => 
-                        song.title.toLowerCase().includes(query) ||
-                        song.artist.toLowerCase().includes(query) ||
-                        song.album.toLowerCase().includes(query)
-                    );
-                }
-
-                // Apply category filter
-                switch (this.currentFilter) {
-                    case 'favorites':
-                        filtered = filtered.filter(song => song.isFavorite);
-                        break;
-                    case 'recent':
-                        filtered = filtered.filter(song => song.playCount > 10);
-                        break;
-                }
-
-                this.filteredSongs = filtered;
-                this.renderSongList();
-                this.updatePlaylistHeader();
-            }
-
-            renderSongList() {
-                if (this.filteredSongs.length === 0) {
-                    this.songList.innerHTML = `
-                        <div class="loading">
-                            <i class="bi bi-music-note" style="font-size: 3em; margin-bottom: 15px; opacity: 0.5;"></i>
-                            <h3>No songs found</h3>
-                            <p>Try adjusting your search or filters</p>
-                        </div>
-                    `;
-                    return;
-                }
-
-                this.songList.innerHTML = this.filteredSongs.map((song, index) => `
-                    <div class="song-item ${this.isCurrentSong(song) ? 'active' : ''}" data-song-id="${song.id}">
-                        <div class="song-info">
-                            <div class="song-title">
-                                <i class="bi bi-music-note"></i> ${song.title}
-                            </div>
-                            <div class="song-artist">${song.artist}</div>
-                            <div class="song-duration">
-                                <i class="bi bi-clock"></i> ${song.duration} • ${song.album}
-                            </div>
-                        </div>
-                        <div class="song-actions">
-                            <button class="action-btn" title="Add to favorites">
-                                <i class="bi ${song.isFavorite ? 'bi-heart-fill' : 'bi-heart'}"></i>
-                            </button>
-                            <button class="action-btn" title="Play count">
-                                <i class="bi bi-play-circle"></i> ${song.playCount}
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
-
-                // Add click listeners
-                document.querySelectorAll('.song-item').forEach(item => {
-                    item.addEventListener('click', (e) => {
-                        if (!e.target.classList.contains('action-btn') && !e.target.parentElement.classList.contains('action-btn')) {
-                            const songId = parseInt(e.currentTarget.dataset.songId);
-                            this.playSongById(songId);
-                        }
-                    });
-                });
-
-                // Add favorite toggle listeners
-                document.querySelectorAll('.action-btn').forEach(btn => {
-                    if (btn.querySelector('.bi-heart, .bi-heart-fill')) {
-                        btn.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            const songId = parseInt(e.currentTarget.closest('.song-item').dataset.songId);
-                            this.toggleFavorite(songId);
-                        });
-                    }
-                });
-            }
-
-            updatePlaylistHeader() {
-                let title = 'All Songs';
-                switch (this.currentFilter) {
-                    case 'favorites':
-                        title = 'Favorite Songs';
-                        break;
-                    case 'recent':
-                        title = 'Recently Played';
-                        break;
-                }
-                
-                if (this.searchQuery) {
-                    title = `Search Results: "${this.searchQuery}"`;
-                }
-
-                this.playlistTitle.textContent = title;
-                this.songCount.textContent = `(${this.filteredSongs.length} songs)`;
-            }
-
-            isCurrentSong(song) {
-                const currentSong = this.musicLibrary[this.currentIndex];
-                return currentSong && currentSong.id === song.id;
-            }
-
-            playSongById(songId) {
-                const songIndex = this.musicLibrary.findIndex(song => song.id === songId);
-                if (songIndex !== -1) {
-                    this.loadSong(songIndex);
-                    this.play();
-                }
-            }
-
-            loadSong(index) {
-                if (index >= 0 && index < this.musicLibrary.length) {
-                    this.currentIndex = index;
-                    const song = this.musicLibrary[index];
-                    
-                    // Note: In a real app, you would load from your server
-                    // For demo, we'll use a placeholder URL
-                    this.audio.src = song.url;
-                    this.currentTitle.textContent = song.title;
-                    this.currentArtist.textContent = song.artist;
-                    
-                    // Update play count
-                    song.playCount++;
-                    
-                    this.renderSongList();
-                }
-            }
-
-            togglePlay() {
-                if (this.musicLibrary.length === 0) return;
-                
-                if (!this.audio.src) {
-                    this.loadSong(0);
-                }
-                
-                if (this.isPlaying) {
-                    this.pause();
-                } else {
-                    this.play();
-                }
-            }
-
-            play() {
-                if (this.musicLibrary.length > 0) {
-                    this.audio.play().catch(e => {
-                        console.log('Playback failed:', e);
-                        alert('Could not load audio file. Please check if the audio URL is accessible.');
-                    });
-                    this.isPlaying = true;
-                }
-            }
-
-            pause() {
-                this.audio.pause();
-                this.isPlaying = false;
-            }
-
-            previousSong() {
-                let newIndex;
-                if (this.isShuffled) {
-                    newIndex = Math.floor(Math.random() * this.musicLibrary.length);
-                } else {
-                    newIndex = this.currentIndex > 0 ? this.currentIndex - 1 : this.musicLibrary.length - 1;
-                }
-                this.loadSong(newIndex);
-                if (this.isPlaying) this.play();
-            }
-
-            nextSong() {
-                let newIndex;
-                if (this.isShuffled) {
-                    newIndex = Math.floor(Math.random() * this.musicLibrary.length);
-                } else {
-                    newIndex = this.currentIndex < this.musicLibrary.length - 1 ? this.currentIndex + 1 : 0;
-                }
-                this.loadSong(newIndex);
-                if (this.isPlaying) this.play();
-            }
-
-            handleSongEnd() {
-                switch (this.repeatMode) {
-                    case 'one':
-                        this.audio.currentTime = 0;
-                        this.play();
-                        break;
-                    case 'all':
-                        this.nextSong();
-                        break;
-                    default:
-                        if (this.currentIndex < this.musicLibrary.length - 1) {
-                            this.nextSong();
-                        } else {
-                            this.pause();
-                        }
-                }
-            }
-
-            toggleShuffle() {
-                this.isShuffled = !this.isShuffled;
-                this.shuffleBtn.style.color = this.isShuffled ? '#feca57' : 'white';
-            }
-
-            toggleRepeat() {
-                const modes = ['off', 'all', 'one'];
-                const currentModeIndex = modes.indexOf(this.repeatMode);
-                this.repeatMode = modes[(currentModeIndex + 1) % modes.length];
-                
-                const icon = this.repeatBtn.querySelector('i');
-                switch (this.repeatMode) {
-                    case 'off':
-                        icon.className = 'bi bi-arrow-repeat';
-                        this.repeatBtn.style.color = 'white';
-                        break;
-                    case 'all':
-                        icon.className = 'bi bi-arrow-repeat';
-                        this.repeatBtn.style.color = '#feca57';
-                        break;
-                    case 'one':
-                        icon.className = 'bi bi-arrow-repeat';
-                        this.repeatBtn.style.color = '#ff6b6b';
-                        break;
-                }
-            }
-
-            shuffleAll() {
-                if (this.filteredSongs.length === 0) return;
-                const randomSong = this.filteredSongs[Math.floor(Math.random() * this.filteredSongs.length)];
-                this.playSongById(randomSong.id);
-                this.isShuffled = true;
-                this.shuffleBtn.style.color = '#feca57';
-            }
-
-            toggleFavorite(songId) {
-                const song = this.musicLibrary.find(s => s.id === songId);
-                if (song) {
-                    song.isFavorite = !song.isFavorite;
-                    this.renderSongList();
-                }
-            }
-
-            handleSearch(event) {
-                this.searchQuery = event.target.value;
-                this.applyFilters();
-            }
-
-            setFilter(filter) {
-                this.currentFilter = filter;
-                
-                // Update active filter button
-                document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                document.querySelector(`[data-filter="${filter}"]`).classList.add('active');
-                
-                this.applyFilters();
-            }
-
-            seekTo(event) {
-                if (this.audio.duration) {
-                    const rect = this.progressBar.getBoundingClientRect();
-                    const percent = (event.clientX - rect.left) / rect.width;
-                    this.audio.currentTime = percent * this.audio.duration;
-                }
-            }
-
-            setVolume(event) {
-                this.audio.volume = event.target.value / 100;
-            }
-
-            updateDuration() {
-                this.duration.textContent = this.formatTime(this.audio.duration || 0);
-            }
-
-            updateProgress() {
-                const current = this.audio.currentTime || 0;
-                const duration = this.audio.duration || 0;
-                
-                this.currentTime.textContent = this.formatTime(current);
-                
-                if (duration > 0) {
-                    const percent = (current / duration) * 100;
-                    this.progressFill.style.width = percent + '%';
-                }
-            }
-
-            updatePlayButton(playing) {
-                if (playing) {
-                    this.playIcon.className = 'bi bi-pause-fill';
-                } else {
-                    this.playIcon.className = 'bi bi-play-fill';
-                }
-                this.isPlaying = playing;
-            }
-
-            formatTime(seconds) {
-                if (isNaN(seconds)) return '0:00';
-                const mins = Math.floor(seconds / 60);
-                const secs = Math.floor(seconds % 60);
-                return `${mins}:${secs.toString().padStart(2, '0')}`;
-            }
+        // Add some random tech icons floating
+        function createFloatingIcon() {
+            const icons = ['💻', '🚀', '⚡', '🎨', '🔥', '💎', '🌟', '🎯'];
+            const icon = document.createElement('div');
+            icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+            icon.style.cssText = `
+                position: fixed;
+                font-size: 2rem;
+                pointer-events: none;
+                z-index: -1;
+                opacity: 0.1;
+                animation: floatUp 8s linear forwards;
+                left: ${Math.random() * 100}vw;
+                bottom: -50px;
+            `;
+            
+            document.body.appendChild(icon);
+            
+            setTimeout(() => icon.remove(), 8000);
         }
 
-        // Initialize the music streaming app
-        document.addEventListener('DOMContentLoaded', () => {
-            new MusicStreamingApp();
+        // Add floating icons periodically
+        setInterval(createFloatingIcon, 3000);
+
+        // Add CSS for floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                to {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add some interactive particles
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: linear-gradient(45deg, #00f5ff, #ff0080);
+                border-radius: 50%;
+                pointer-events: none;
+                left: ${x}px;
+                top: ${y}px;
+                animation: particleFloat 2s ease-out forwards;
+                z-index: 1000;
+            `;
+            
+            document.body.appendChild(particle);
+            setTimeout(() => particle.remove(), 2000);
+        }
+
+        const particleStyle = document.createElement('style');
+        particleStyle.textContent = `
+            @keyframes particleFloat {
+                0% {
+                    opacity: 1;
+                    transform: translate(0, 0) scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) scale(0);
+                }
+            }
+        `;
+        document.head.appendChild(particleStyle);
+
+        // Create particles on click
+        document.addEventListener('click', (e) => {
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => createParticle(e.clientX, e.clientY), i * 50);
+            }
         });
     </script>
 </body>
