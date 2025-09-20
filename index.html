@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nishant Dalal - Creative Developer</title>
+    <title>Nishant</title>
     <style>
         * {
             margin: 0;
@@ -575,7 +575,7 @@
         </div>
 
         <div class="hero-content">
-            <h1>Nishant Dalal</h1>
+            <h1>Nishant</h1>
             <p class="subtitle">Creative Developer & Digital Innovator</p>
             <p class="description">
                 Transforming ideas into digital reality through code, design, and innovation. 
@@ -693,6 +693,105 @@
             </div>
         </div>
     </section>
+
+    <!-- Feedback Section at End of Website -->
+    <section id="feedback" class="section">
+        <div class="contact fade-in">
+            <h2>Share Your Feedback</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.8;">
+                Your thoughts and feedback help me improve and grow. I'd love to hear from you!
+            </p>
+            
+            <form class="feedback-form" id="feedbackForm" style="max-width: 600px; margin: 0 auto;">
+                <input 
+                    type="text" 
+                    class="feedback-input" 
+                    id="feedbackName" 
+                    placeholder="Your Name (Optional)"
+                >
+                <input 
+                    type="email" 
+                    class="feedback-input" 
+                    id="feedbackEmail" 
+                    placeholder="Your Email (Optional)"
+                >
+                <textarea 
+                    class="feedback-input feedback-textarea" 
+                    id="feedbackMessage" 
+                    placeholder="Share your thoughts, suggestions, or feedback about my portfolio..."
+                    required
+                ></textarea>
+                
+                <div class="feedback-buttons">
+                    <button type="submit" class="contact-btn" id="submitBtn">
+                        Send Feedback
+                    </button>
+                </div>
+            </form>
+            
+            <div class="feedback-loading" id="feedbackLoading">
+                <p>Sending your feedback... ✨</p>
+            </div>
+            
+            <div class="feedback-success" id="feedbackSuccess" style="display: none;">
+                <p>Thank you! Your feedback has been sent successfully! 🚀</p>
+            </div>
+            
+            <div class="feedback-error" id="feedbackError" style="display: none;">
+                <p>Oops! Something went wrong. Please try again later.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Modal (kept for exit intent) -->
+    <div class="feedback-overlay" id="feedbackOverlay">
+        <div class="feedback-modal">
+            <h3>🌟 Your Feedback Matters!</h3>
+            <p>Before you go, I'd love to hear your thoughts about my portfolio. Your feedback helps me improve and grow!</p>
+            
+            <form class="feedback-form" id="feedbackModalForm">
+                <input 
+                    type="text" 
+                    class="feedback-input" 
+                    id="feedbackModalName" 
+                    placeholder="Your Name (Optional)"
+                >
+                <input 
+                    type="email" 
+                    class="feedback-input" 
+                    id="feedbackModalEmail" 
+                    placeholder="Your Email (Optional)"
+                >
+                <textarea 
+                    class="feedback-input feedback-textarea" 
+                    id="feedbackModalMessage" 
+                    placeholder="Share your thoughts, suggestions, or feedback about my portfolio..."
+                    required
+                ></textarea>
+                
+                <div class="feedback-buttons">
+                    <button type="submit" class="feedback-btn submit" id="submitModalBtn">
+                        Send Feedback
+                    </button>
+                    <button type="button" class="feedback-btn skip" id="skipBtn">
+                        Skip for Now
+                    </button>
+                </div>
+            </form>
+            
+            <div class="feedback-loading" id="feedbackModalLoading">
+                <p>Sending your feedback... ✨</p>
+            </div>
+            
+            <div class="feedback-success" id="feedbackModalSuccess" style="display: none;">
+                <p>Thank you! Your feedback has been sent successfully! 🚀</p>
+            </div>
+            
+            <div class="feedback-error" id="feedbackModalError" style="display: none;">
+                <p>Oops! Something went wrong. Please try again later.</p>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Custom cursor
