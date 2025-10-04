@@ -419,5 +419,43 @@
             document.getElementById('certificateForm').reset();
         }
     </script>
+    <script>
+    // Disable right click
+    document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+    });
+
+    // Disable copy and paste
+    document.addEventListener("copy", function(e) {
+      e.preventDefault();
+    });
+    document.addEventListener("paste", function(e) {
+      e.preventDefault();
+    });
+
+    // Disable specific key combinations
+    document.addEventListener("keydown", function(e) {
+      // Block Ctrl or Cmd key entirely
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        return false;
+      }
+
+      // Block F12 (DevTools)
+      if (e.key === "F12") {
+        e.preventDefault();
+      }
+
+      // Block Ctrl+Shift+I or Cmd+Shift+I
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "i") {
+        e.preventDefault();
+      }
+
+      // Block Ctrl+U or Cmd+U
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "u") {
+        e.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>
