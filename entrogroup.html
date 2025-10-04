@@ -1,9 +1,286 @@
-<!Doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title> EntroGroup </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Lookup Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .result {
+            display: none;
+            animation: slideIn 0.5s ease-out;
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .result h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .info-value {
+            color: #333;
+            text-align: right;
+        }
+
+        .certificate-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .certificate-link a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .certificate-link a:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        .back-btn {
+            margin-top: 15px;
+            background: linear-gradient(135deg, #868f96 0%, #596164 100%);
+        }
+
+        .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
-<h1>EntroGroup & Company</h1>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🎓</div>
+            <h1>Certificate Portal</h1>
+            <p>Enter your details to access your certificate</p>
+        </div>
+
+        <form id="certificateForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="certNumber">Certificate Number</label>
+                <input type="text" id="certNumber" required placeholder="Enter certificate number">
+            </div>
+
+            <button type="submit" class="btn">View Certificate</button>
+        </form>
+
+        <div id="result" class="result">
+            <h2>Certificate Details</h2>
+            <div class="info-row">
+                <span class="info-label">Name:</span>
+                <span class="info-value" id="displayName"></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Certificate Number:</span>
+                <span class="info-value" id="displayCertNumber"></span>
+            </div>
+            <div class="certificate-link">
+                <a id="certLink" href="#" target="_blank">📄 View Certificate</a>
+            </div>
+            <button class="btn back-btn" onclick="goBack()">Enter Another Certificate</button>
+        </div>
+    </div>
+
+    <script>
+        // Sample certificate database
+        const certificates = {
+            'EGC-0125-0010': {
+                name: 'Sahil Sandeep Patil',
+                link: '#'
+            },
+            'EGC-0125-0011': {
+                name: 'Kishan Kumar',
+                link: '#'
+            },
+            'EGC-0125-0012': {
+                name: 'VijayKumar Prashanth',
+                link: '#'
+            }
+        };
+
+        document.getElementById('certificateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const certNumber = document.getElementById('certNumber').value.toUpperCase();
+            
+            // Check if certificate exists in database
+            const cert = certificates[certNumber];
+            
+            // For demo purposes, show result even if not in database
+            // In production, you'd validate against your actual database
+            document.getElementById('displayName').textContent = name;
+            document.getElementById('displayCertNumber').textContent = certNumber;
+            
+            // Set certificate link (use actual link if exists, otherwise a default)
+            const certLink = cert ? cert.link : `https://drive.google.com/file/d/${certNumber}`;
+            document.getElementById('certLink').href = certLink;
+            
+            // Hide form and show result
+            document.getElementById('certificateForm').style.display = 'none';
+            document.querySelector('.header').style.display = 'none';
+            document.getElementById('result').classList.add('show');
+        });
+
+        function goBack() {
+            document.getElementById('certificateForm').style.display = 'block';
+            document.querySelector('.header').style.display = 'block';
+            document.getElementById('result').classList.remove('show');
+            document.getElementById('certificateForm').reset();
+        }
+    </script>
 </body>
 </html>
