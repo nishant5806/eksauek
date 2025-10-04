@@ -259,6 +259,18 @@
                 <span class="info-label">Certificate Number:</span>
                 <span class="info-value" id="displayCertNumber"></span>
             </div>
+            <div class="info-row">
+                <span class="info-label">Internship:</span>
+                <span class="info-value" id="displayInternship"></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Duration:</span>
+                <span class="info-value" id="displayDuration"></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Mentor:</span>
+                <span class="info-value" id="displayMentor"></span>
+            </div>
             <div class="certificate-link">
                 <a id="certLink" href="#" target="_blank">📄 View Certificate</a>
             </div>
@@ -271,50 +283,98 @@
         const certificates = {
             'EGC-0125-0010': {
                 name: 'Sahil Sandeep Patil',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1DQ0vYoh_-uppZAfwrVGpHDyEUuvVJ7G_/view?usp=sharing'
             },
             'EGC-0125-0011': {
                 name: 'Kishan Kumar',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/13vI2bJk2_fcGj8lYdcdc8aSot-EdqoYs/view?usp=sharing'
             },
             'EGC-0125-0012': {
                 name: 'Vijayakumar Prashanth',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1h_3l2vF7faE1EyXPK76HUKZbZaB1YED2/view?usp=sharing'
             },
             'EGC-0125-0013': {
                 name: 'Lavanya Pinnula',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1aGmeNQ_bq93qEfcQiWlMriLY1VO1yZOw/view?usp=sharing'
             },
             'EGC-0125-0014': {
                 name: 'Vijaylaxmi Sharad Punekar',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1DUVttYjSIbU7KTzE2EKXpvlkN_SF0OSm/view?usp=sharing'
             },
             'EGC-0125-0015': {
                 name: 'Nikhil Kumar',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1xlttBSAWVd4y95U63RTXeHWObrpfY41E/view?usp=sharing'
             },
             'EGC-0125-0016': {
                 name: 'Nethra Kanagaraj',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1dfK2MGSKFylVIE88JwnQsm8TaiywWGWm/view?usp=sharing'
             },
             'EGC-0125-0017': {
                 name: 'Aditya Tomer',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1GWHm5FpoeWu-tO86m4ZFfWRtob_yTBNa/view?usp=sharing'
             },
             'EGC-0125-0018': {
                 name: 'Balamurgan E',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1DnTNlmTZ2RImNXHAQ-hvgPGXLrg-U11y/view?usp=sharing'
             },
             'EGC-0125-0019': {
                 name: 'Joseph Sam M',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1d4_2OhwX91anWqxAepm8Wze4NJyXGzw6/view?usp=sharing'
             },
             'EGC-0125-0020': {
                 name: 'Varun Kumar',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1pnC9fWAHOAsK5toFenHX7wTY1hHaYGfC/view?usp=sharing'
             },
             'EGC-0125-0021': {
                 name: 'Mariam Fayed',
+                internship: 'App Development Internship',
+                from: '01/09/2025',
+                to: '30/09/2025',
+                mentor: 'Nishant',
                 link: 'https://drive.google.com/file/d/1jrY9qMgXSdIxhOHTOzuql1eCuJ0Q__8t/view?usp=sharing'
             }
         };
@@ -336,6 +396,9 @@
                 // Certificate found - show details
                 document.getElementById('displayName').textContent = cert.name;
                 document.getElementById('displayCertNumber').textContent = certNumber;
+                document.getElementById('displayInternship').textContent = cert.internship;
+                document.getElementById('displayDuration').textContent = `${cert.from} to ${cert.to}`;
+                document.getElementById('displayMentor').textContent = cert.mentor;
                 document.getElementById('certLink').href = cert.link;
                 
                 // Hide form and show result
