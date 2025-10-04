@@ -419,17 +419,21 @@
             document.getElementById('certificateForm').reset();
         }
     </script>
-    <script>
+     <script>
     // Disable right click
     document.addEventListener("contextmenu", function(e) {
       e.preventDefault();
     });
 
-    // Disable copy and paste
-    document.addEventListener("copy", function(e) {
-      e.preventDefault();
+    // Disable copy, paste, cut
+    ["copy", "paste", "cut"].forEach(function(evt) {
+      document.addEventListener(evt, function(e) {
+        e.preventDefault();
+      });
     });
-    document.addEventListener("paste", function(e) {
+
+    // Disable text selection via JS (extra protection)
+    document.addEventListener("selectstart", function(e) {
       e.preventDefault();
     });
 
