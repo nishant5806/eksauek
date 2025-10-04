@@ -193,6 +193,33 @@
             font-size: 3em;
             margin-bottom: 15px;
         }
+
+        .error-message {
+            display: none;
+            background: #fee;
+            border-left: 5px solid #e74c3c;
+            color: #c0392b;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            animation: shake 0.5s ease-out;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .error-message strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
     </style>
 </head>
 <body>
@@ -217,6 +244,11 @@
             <button type="submit" class="btn">View Certificate</button>
         </form>
 
+        <div id="errorMessage" class="error-message">
+            <strong>❌ Certificate Not Found</strong>
+            <p>No certificate exists with the provided details. Please check your name and certificate number.</p>
+        </div>
+
         <div id="result" class="result">
             <h2>Certificate Details</h2>
             <div class="info-row">
@@ -237,48 +269,54 @@
     <script>
         // Sample certificate database
         const certificates = {
-            'EGC-0125-0010': {
-                name: 'Sahil Sandeep Patil',
-                link: '#'
+            'CERT001': {
+                name: 'John Doe',
+                link: 'https://drive.google.com/file/d/example1'
             },
-            'EGC-0125-0011': {
-                name: 'Kishan Kumar',
-                link: '#'
+            'CERT002': {
+                name: 'Jane Smith',
+                link: 'https://drive.google.com/file/d/example2'
             },
-            'EGC-0125-0012': {
-                name: 'VijayKumar Prashanth',
-                link: '#'
+            'CERT003': {
+                name: 'Mike Johnson',
+                link: 'https://drive.google.com/file/d/example3'
             }
         };
 
         document.getElementById('certificateForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const certNumber = document.getElementById('certNumber').value.toUpperCase();
+            const name = document.getElementById('name').value.trim();
+            const certNumber = document.getElementById('certNumber').value.trim().toUpperCase();
+            
+            // Hide any previous error message
+            document.getElementById('errorMessage').classList.remove('show');
             
             // Check if certificate exists in database
             const cert = certificates[certNumber];
             
-            // For demo purposes, show result even if not in database
-            // In production, you'd validate against your actual database
-            document.getElementById('displayName').textContent = name;
-            document.getElementById('displayCertNumber').textContent = certNumber;
-            
-            // Set certificate link (use actual link if exists, otherwise a default)
-            const certLink = cert ? cert.link : `https://drive.google.com/file/d/${certNumber}`;
-            document.getElementById('certLink').href = certLink;
-            
-            // Hide form and show result
-            document.getElementById('certificateForm').style.display = 'none';
-            document.querySelector('.header').style.display = 'none';
-            document.getElementById('result').classList.add('show');
+            // Validate certificate exists and name matches
+            if (cert && cert.name.toLowerCase() === name.toLowerCase()) {
+                // Certificate found - show details
+                document.getElementById('displayName').textContent = cert.name;
+                document.getElementById('displayCertNumber').textContent = certNumber;
+                document.getElementById('certLink').href = cert.link;
+                
+                // Hide form and show result
+                document.getElementById('certificateForm').style.display = 'none';
+                document.querySelector('.header').style.display = 'none';
+                document.getElementById('result').classList.add('show');
+            } else {
+                // Certificate not found or name doesn't match - show error
+                document.getElementById('errorMessage').classList.add('show');
+            }
         });
 
         function goBack() {
             document.getElementById('certificateForm').style.display = 'block';
             document.querySelector('.header').style.display = 'block';
             document.getElementById('result').classList.remove('show');
+            document.getElementById('errorMessage').classList.remove('show');
             document.getElementById('certificateForm').reset();
         }
     </script>
