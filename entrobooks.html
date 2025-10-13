@@ -148,11 +148,42 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            text-decoration: none;
+            display: inline-block;
         }
 
         .buy-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .countdown-timer {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            color: #e8e8e8;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            color: #a0a0a0;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .countdown-time {
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .upcoming-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         }
 
         /* Navbar Styles */
@@ -291,7 +322,7 @@
     <div class="container">
         <div class="header">
             <h1>EntroBooks</h1>
-            <p>Curated Collection of Premium Story Books</p>
+            <p>Curated Collection of Premium Literature</p>
         </div>
 
         <div class="search-bar">
@@ -300,23 +331,23 @@
         </div>
 
         <div class="books-grid" id="booksGrid">
-            <!-- Book 1 -->
+            <!-- Book 1 - Available -->
             <div class="book-card" data-title="The Midnight Library" data-author="Matt Haig">
                 <div class="book-image-container">
-                    <img src="http://entrocomedy.c1.biz/images/wkd.png" alt="Book Cover" class="book-image">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop" alt="Book Cover" class="book-image">
                     <div class="book-badge">Bestseller</div>
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">Who Killed Dad?</h3>
-                    <p class="book-author">by Nishant</p>
+                    <h3 class="book-title">The Midnight Library</h3>
+                    <p class="book-author">by Matt Haig</p>
                     <div class="book-footer">
-                        <span class="book-price">$2.49</span>
-                        <button class="buy-button">Buy Now</button>
+                        <span class="book-price">$24.99</span>
+                        <a href="https://example.com/midnight-library" class="buy-button" target="_blank">Buy Now</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Book 2 -->
+            <!-- Book 2 - Available -->
             <div class="book-card" data-title="Atomic Habits" data-author="James Clear">
                 <div class="book-image-container">
                     <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400&h=600&fit=crop" alt="Book Cover" class="book-image">
@@ -327,28 +358,31 @@
                     <p class="book-author">by James Clear</p>
                     <div class="book-footer">
                         <span class="book-price">$27.99</span>
-                        <button class="buy-button">Buy Now</button>
+                        <a href="https://example.com/atomic-habits" class="buy-button" target="_blank">Buy Now</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Book 3 -->
-            <div class="book-card" data-title="Project Hail Mary" data-author="Andy Weir">
+            <!-- Book 3 - Upcoming -->
+            <div class="book-card" data-title="Project Hail Mary" data-author="Andy Weir" data-upcoming="2025-11-01T00:00:00">
                 <div class="book-image-container">
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=600&fit=crop" alt="Book Cover" class="book-image">
-                    <div class="book-badge">Featured</div>
+                    <div class="book-badge upcoming-badge">Coming Soon</div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Project Hail Mary</h3>
                     <p class="book-author">by Andy Weir</p>
                     <div class="book-footer">
                         <span class="book-price">$29.99</span>
-                        <button class="buy-button">Buy Now</button>
+                        <div class="countdown-timer">
+                            <div class="countdown-label">Launches In</div>
+                            <div class="countdown-time" data-countdown="2025-11-01T00:00:00">Loading...</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Book 4 -->
+            <!-- Book 4 - Available -->
             <div class="book-card" data-title="The Psychology of Money" data-author="Morgan Housel">
                 <div class="book-image-container">
                     <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&h=600&fit=crop" alt="Book Cover" class="book-image">
@@ -359,28 +393,31 @@
                     <p class="book-author">by Morgan Housel</p>
                     <div class="book-footer">
                         <span class="book-price">$22.99</span>
-                        <button class="buy-button">Buy Now</button>
+                        <a href="https://example.com/psychology-money" class="buy-button" target="_blank">Buy Now</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Book 5 -->
-            <div class="book-card" data-title="Dune" data-author="Frank Herbert">
+            <!-- Book 5 - Upcoming -->
+            <div class="book-card" data-title="Dune: Messiah" data-author="Frank Herbert" data-upcoming="2025-12-15T00:00:00">
                 <div class="book-image-container">
                     <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?w=400&h=600&fit=crop" alt="Book Cover" class="book-image">
-                    <div class="book-badge">Classic</div>
+                    <div class="book-badge upcoming-badge">Coming Soon</div>
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">Dune</h3>
+                    <h3 class="book-title">Dune: Messiah</h3>
                     <p class="book-author">by Frank Herbert</p>
                     <div class="book-footer">
                         <span class="book-price">$26.99</span>
-                        <button class="buy-button">Buy Now</button>
+                        <div class="countdown-timer">
+                            <div class="countdown-label">Launches In</div>
+                            <div class="countdown-time" data-countdown="2025-12-15T00:00:00">Loading...</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Book 6 -->
+            <!-- Book 6 - Available -->
             <div class="book-card" data-title="Sapiens" data-author="Yuval Noah Harari">
                 <div class="book-image-container">
                     <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&h=600&fit=crop" alt="Book Cover" class="book-image">
@@ -391,7 +428,7 @@
                     <p class="book-author">by Yuval Noah Harari</p>
                     <div class="book-footer">
                         <span class="book-price">$28.99</span>
-                        <button class="buy-button">Buy Now</button>
+                        <a href="https://example.com/sapiens" class="buy-button" target="_blank">Buy Now</a>
                     </div>
                 </div>
             </div>
