@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .card-perspective {
+            perspective: 2000px;
+        }
+
+        .card-container {
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .card-container.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        .spark {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .glow-text {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { 
+                text-shadow: 0 0 20px rgba(255,255,255,0.5),
+                             0 0 40px rgba(255,215,0,0.3);
+            }
+            50% { 
+                text-shadow: 0 0 30px rgba(255,255,255,0.8),
+                             0 0 60px rgba(255,215,0,0.6);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .heartbeat {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            50% { transform: scale(1); }
+        }
+
+        .rotate-slow {
+            animation: rotateSlow 10s linear infinite;
+        }
+
+        @keyframes rotateSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .bounce-instruction {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .twinkle {
+            animation: twinkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .confetti-spin {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .gradient-border {
+            background: linear-gradient(135deg, #ffd700, #ffed4e, #ffd700);
+            background-size: 200% 200%;
+            animation: borderGlow 3s ease infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center overflow-x-hidden p-4">
+    
+    <!-- Sparkles Background -->
+    <div id="sparkles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Main Container -->
+    <div class="relative z-10 w-full max-w-2xl">
+        
+        <!-- Card Scene -->
+        <div class="card-perspective w-full h-[80vh] max-h-[700px] min-h-[500px]">
+            <div id="card" class="card-container relative w-full h-full cursor-pointer">
+                
+                <!-- Front Face -->
+                <div class="card-face absolute inset-0 rounded-3xl shadow-2xl flex flex-col items-center justify-center p-8 bg-gradient-to-br from-yellow-200 via-pink-200 to-blue-400 gradient-border">
+                    <div class="absolute inset-1 bg-gradient-to-br from-amber-100 via-rose-100 to-sky-200 rounded-3xl flex flex-col items-center justify-center p-8">
+                        
+                        <!-- Top Icon -->
+                        <div class="float-animation mb-6">
+                            <i class="fas fa-gift text-6xl md:text-8xl text-yellow-500 drop-shadow-lg"></i>
+                        </div>
+
+                        <!-- Happy New Year Text -->
+                        <h1 class="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 text-center mb-4 title-font">
+                            Happy New Year
+                        </h1>
+
+                        <!-- Year 2025 -->
+                        <div class="text-7xl md:text-9xl font-bold text-white glow-text my-6 title-font">
+                            2025
+                        </div>
+
+                        <!-- Confetti Icons -->
+                        <div class="flex gap-6 my-6">
+                            <span class="confetti-spin text-4xl md:text-5xl">🎊</span>
+                            <span class="confetti-spin text-4xl md:text-5xl" style="animation-delay: 0.5s;">✨</span>
+                            <span class="confetti-spin text-4xl md:text-5xl" style="animation-delay: 1s;">🎉</span>
+                        </div>
+
+                        <!-- To Someone Special -->
+                        <h2 class="text-2xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 text-center mb-6 title-font">
+                            To Someone Special
+                        </h2>
+
+                        <!-- Stars -->
+                        <div class="flex gap-4">
+                            <span class="twinkle text-2xl md:text-3xl">⭐</span>
+                            <span class="twinkle text-2xl md:text-3xl" style="animation-delay: 0.3s;">⭐</span>
+                            <span class="twinkle text-2xl md:text-3xl" style="animation-delay: 0.6s;">⭐</span>
+                        </div>
+
+                        <!-- Decorative Elements -->
+                        <div class="absolute top-4 left-4 text-3xl rotate-slow opacity-50">🎪</div>
+                        <div class="absolute top-4 right-4 text-3xl rotate-slow opacity-50" style="animation-delay: 1s;">🎭</div>
+                        <div class="absolute bottom-4 left-4 text-3xl rotate-slow opacity-50" style="animation-delay: 2s;">🎨</div>
+                        <div class="absolute bottom-4 right-4 text-3xl rotate-slow opacity-50" style="animation-delay: 3s;">🎯</div>
+                    </div>
+                </div>
+
+                <!-- Back Face -->
+                <div class="card-face card-back absolute inset-0 rounded-3xl shadow-2xl flex flex-col items-center justify-center p-8 bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400 gradient-border">
+                    <div class="absolute inset-1 bg-gradient-to-br from-pink-100 via-purple-100 to-indigo-200 rounded-3xl flex flex-col items-center justify-center p-8 overflow-y-auto">
+                        
+                        <!-- Heart Icon -->
+                        <div class="heartbeat mb-6">
+                            <i class="fas fa-heart text-6xl md:text-7xl text-pink-500 drop-shadow-lg"></i>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="w-3/4 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mb-6"></div>
+
+                        <!-- Message 1 -->
+                        <p class="text-base md:text-xl text-gray-800 text-center leading-relaxed mb-6 max-w-lg">
+                            As we step into <span class="font-bold text-purple-600">2025</span>, I want you to know how grateful I am to have you in my life. 
+                            <span class="heartbeat inline-block text-pink-500">♥</span>
+                        </p>
+
+                        <!-- Message 2 -->
+                        <p class="text-base md:text-xl text-gray-800 text-center leading-relaxed mb-6 max-w-lg">
+                            May this year bring you endless <span class="font-semibold text-yellow-600">joy</span>, 
+                            <span class="font-semibold text-pink-600">love</span>, and 
+                            <span class="font-semibold text-purple-600">success</span>. Here's to new beginnings, cherished moments, and dreams coming true!
+                        </p>
+
+                        <!-- Divider -->
+                        <div class="w-3/4 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mb-6"></div>
+
+                        <!-- Icons Row -->
+                        <div class="flex gap-6 mb-6">
+                            <i class="fas fa-star text-3xl md:text-4xl text-yellow-500 twinkle"></i>
+                            <i class="fas fa-champagne-glasses text-3xl md:text-4xl text-yellow-600 float-animation"></i>
+                            <i class="fas fa-star text-3xl md:text-4xl text-yellow-500 twinkle" style="animation-delay: 0.5s;"></i>
+                        </div>
+
+                        <!-- Closing Text -->
+                        <h3 class="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 text-center mb-6 title-font">
+                            With Love & Best Wishes
+                        </h3>
+
+                        <!-- Bottom Icon -->
+                        <div class="float-animation">
+                            <i class="fas fa-sparkles text-5xl md:text-6xl text-yellow-400 drop-shadow-lg"></i>
+                        </div>
+
+                        <!-- Decorative Corner Icons -->
+                        <div class="absolute top-4 left-4 text-2xl opacity-40">💫</div>
+                        <div class="absolute top-4 right-4 text-2xl opacity-40">🌟</div>
+                        <div class="absolute bottom-4 left-4 text-2xl opacity-40">✨</div>
+                        <div class="absolute bottom-4 right-4 text-2xl opacity-40">💖</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Instruction -->
+        <div id="instruction" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 glass-effect px-6 py-3 rounded-full text-white text-sm md:text-base font-semibold shadow-lg bounce-instruction z-50">
+            <i class="fas fa-hand-pointer mr-2"></i>
+            <span>Click to flip the card!</span>
+        </div>
+
+    </div>
+
+    <script>
+        const card = document.getElementById('card');
+        const instruction = document.getElementById('instruction');
+        const sparklesContainer = document.getElementById('sparkles');
+
+        // Create background sparkles
+        function createSparkles() {
+            for (let i = 0; i < 60; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'spark';
+                spark.style.left = Math.random() * 100 + '%';
+                spark.style.top = Math.random() * 100 + '%';
+                spark.style.animationDelay = Math.random() * 2 + 's';
+                sparklesContainer.appendChild(spark);
+            }
+        }
+
+        createSparkles();
+
+        // Card flip functionality
+        function flipCard() {
+            card.classList.toggle('flipped');
+            
+            if (card.classList.contains('flipped')) {
+                instruction.innerHTML = '<i class="fas fa-redo-alt mr-2"></i><span>Click to flip back!</span>';
+                createFireworks();
+            } else {
+                instruction.innerHTML = '<i class="fas fa-hand-pointer mr-2"></i><span>Click to flip the card!</span>';
+            }
+        }
+
+        // Click event
+        card.addEventListener('click', flipCard);
+
+        // Touch support for mobile
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        card.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        card.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchEndY = e.changedTouches[0].clientY;
+            const deltaX = Math.abs(touchEndX - touchStartX);
+            const deltaY = Math.abs(touchEndY - touchStartY);
+
+            // Only flip if it's a tap (not a scroll)
+            if (deltaX < 10 && deltaY < 10) {
+                flipCard();
+            }
+        }, { passive: true });
+
+        // Create fireworks effect
+        function createFireworks() {
+            const colors = ['#ff6b9d', '#ffd89b', '#19547b', '#f093fb', '#f5576c', '#FFD700', '#FF69B4', '#9370DB'];
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            
+            // Create multiple bursts
+            for (let burst = 0; burst < 3; burst++) {
+                setTimeout(() => {
+                    for (let i = 0; i < 40; i++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'fixed rounded-full pointer-events-none z-[9999]';
+                        particle.style.width = '10px';
+                        particle.style.height = '10px';
+                        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                        particle.style.left = centerX + 'px';
+                        particle.style.top = centerY + 'px';
+                        particle.style.boxShadow = `0 0 10px ${colors[Math.floor(Math.random() * colors.length)]}`;
+                        
+                        document.body.appendChild(particle);
+                        
+                        const angle = (Math.PI * 2 * i) / 40;
+                        const velocity = 100 + Math.random() * 200;
+                        const tx = Math.cos(angle) * velocity;
+                        const ty = Math.sin(angle) * velocity;
+                        
+                        particle.animate([
+                            { 
+                                transform: 'translate(-50%, -50%) scale(1)', 
+                                opacity: 1 
+                            },
+                            { 
+                                transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0)`, 
+                                opacity: 0 
+                            }
+                        ], {
+                            duration: 1500,
+                            easing: 'cubic-bezier(0, .9, .57, 1)'
+                        }).onfinish = () => particle.remove();
+                    }
+                }, burst * 200);
+            }
+        }
+
+        // Prevent context menu on long press
+        card.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
